@@ -1,27 +1,10 @@
 #include<iostream>
-#include<string>
+#include<cstdlib>
 using namespace std;
 int main(){
-	string s;
-	int cnt=0;
-	while(getline(cin,s)){
-		for(int i=0;i<s.length();i++){
-			if(s[i]==' '){
-				cout<<" ";
-			}else{
-				if(s[i]=='"'){
-					if(cnt%2==0){
-						cout<<"``";
-						cnt++;
-					}else{
-						cout<<"''";
-						cnt++;
-					}
-				}else{
-					cout<<s[i];
-				}
-			}
-		}
-		cout<<"\n"; 
+	long long int a,b,sum;
+	while(cin>>a>>b){
+		sum=abs(b-a);
+		cout<<sum<<endl;
 	}
 } 
