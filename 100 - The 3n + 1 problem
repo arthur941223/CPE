@@ -1,0 +1,31 @@
+#include<iostream>
+using namespace std;
+int main(){
+	int a,b;
+	while(cin>>a>>b){
+		cout<<a<<" "<<b<<" ";
+		if(a>b){                         //a要小於b
+			int temp=a;
+			a=b;
+			b=temp;
+		}
+		int max=0;
+		for(int i=a;i<=b;i++){
+			int cnt=1;
+			int A=i;
+			while(A!=1){
+				if(A%2==1){
+					A=A*3+1;
+					cnt++;
+				}else{
+					A/=2;
+					cnt++;
+				}
+			}
+			if(max<cnt){
+				max=cnt;
+			}
+		}
+		cout<<max<<endl;
+	} 
+} 
