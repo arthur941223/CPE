@@ -1,0 +1,17 @@
+#include<iostream>
+#include<map>
+using namespace std;
+int main(){
+	int T;
+	cin>>T;
+	map<string,int> mp; 
+	while(T--){
+		string s;
+		cin>>s;
+		mp[s]++;
+		getline(cin,s);
+	}
+	for(auto i:mp){
+		cout<<i.first<<" "<<i.second<<endl;
+	}
+} 
