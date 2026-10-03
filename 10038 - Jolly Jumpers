@@ -1,0 +1,30 @@
+#include<iostream>
+#include<vector>
+#include<cstdlib>
+using namespace std;
+int main(){
+	int t;
+	while(cin>>t){
+		vector<int> a(t);
+		for(int i=0;i<t;i++){
+			cin>>a[i];
+		}
+		int tf=1;			//t=1也是Jolly
+		for(int i=1;i<t;i++){
+			tf=0;
+			for(int j=0;j<t-1;j++){
+				if(i==abs(a[j]-a[j+1])){
+					tf=1;
+				}
+			}
+			if(tf!=1){
+				break;
+			}
+		}                   
+		if(tf){
+			cout<<"Jolly"<<endl;
+		}else{
+			cout<<"Not jolly"<<endl;
+		}
+	}
+}
