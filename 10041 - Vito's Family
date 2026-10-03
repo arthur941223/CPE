@@ -1,0 +1,29 @@
+#include<iostream>
+#include<vector>
+#include<algorithm>
+#include<cstdlib>
+using namespace std;
+int main(){
+	int T;
+	cin>>T;
+	while(T--){
+		int t;
+		cin>>t;
+		vector<int> a(t+1);
+		for(int i=1;i<=t;i++){
+			cin>>a[i];
+		}
+		sort(a.begin(),a.end());
+		int mid;
+		if(t%2==1){
+			mid=a[(t+1)/2];
+		}else{
+			mid=a[t/2];
+		}
+		int sum=0;
+		for(int i=1;i<=t;i++){
+			sum+=abs(a[i]-mid);
+		}
+		cout<<sum<<endl; 
+	}
+}
