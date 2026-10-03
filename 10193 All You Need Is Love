@@ -1,0 +1,36 @@
+#include<iostream>
+#include<string>
+using namespace std;
+int R(string s);
+int GCD(int a,int b);
+int main(){
+	int T;
+	cin>>T;
+	int a=1;
+	while(T--){
+		string s1,s2;
+		cin>>s1>>s2;
+		int S1,S2;
+		S1=R(s1);
+		S2=R(s2);
+		if(GCD(S1,S2)==1){
+			cout<<"Pair #"<<a<<": Love is not all you need!"<<endl;
+		}else{
+			cout<<"Pair #"<<a<<": All you need is love!"<<endl;
+		}
+		a++;
+	}
+} 
+
+int R(string s){
+	int sum=0;
+	for(int i=0;i<s.length();i++){
+		sum=sum*2+(s[i]-'0');
+	}
+	return sum;
+}
+
+int GCD(int a,int b){
+	while((a%=b)&&(b%=a));
+	return a+b;
+} 
