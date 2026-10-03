@@ -1,0 +1,35 @@
+#include<iostream>
+#include<string>
+using namespace std;
+int main(){
+	int T;
+	int Table[26]={0};
+	cin>>T;
+	cin.ignore();                       //cin殘留 \n 
+	int max=0;
+	while(T--){
+		string s;
+		getline(cin,s);
+		for(int i=0;i<s.length();i++){
+			if(s[i]>='A'&&s[i]<='Z'){
+				Table[s[i]-'A']+=1;
+				if(max<Table[s[i]-'A']){
+				 	max=Table[s[i]-'A'];
+				}
+			}
+			if(s[i]>='a'&&s[i]<='z'){
+				Table[s[i]-'a']+=1; 
+				if(max<Table[s[i]-'a']){
+				 	max=Table[s[i]-'a'];
+				 }
+			}
+		}	
+	} 
+	for(int j=max;j>0;j--){
+		for(int k=0;k<26;k++){
+			if(Table[k]==j){
+				cout<<char(k+'A')<<" "<<j<<endl;
+			}
+		}
+	}
+}
