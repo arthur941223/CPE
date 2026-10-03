@@ -1,0 +1,26 @@
+#include<iostream>
+#include<string>
+using namespace std;
+int main(){
+	string s;
+	int flag=0;
+	while(getline(cin,s)){
+		if(flag) cout<<endl;        		//空行( 特別 ) 
+		int Table[128]={0};
+		int max=0;
+		for(int i=0;i<s.length();i++){
+			Table[s[i]-0]+=1;
+			if(max<Table[s[i]-0]){
+				max=Table[s[i]-0];
+			}
+		}
+		for(int j=1;j<=max;j++){					//從數字小到大 
+			for(int i=127;i>0;i--){					//從大到小 
+				if(Table[i]==j){
+					cout<<i<<" "<<Table[i]<<endl;
+				}
+			}
+		}
+		flag=1; 
+	}
+} 
