@@ -1,0 +1,23 @@
+#include<iostream>
+#include<cmath>
+#include<string>
+#include<cstdio>
+using namespace std;
+#define PI 3.1415926535897
+int main(){
+	double a,b;
+	string s;
+	while(cin>>a>>b>>s){
+		if(s=="min"){
+			b=b/60;
+		}
+		if(b>180){
+			b=360-b;
+		}
+		double r=6440+a;
+		double theta=b*PI/180;
+		double arc=r*theta;
+		double chord=2*r*sin(theta/2);
+		printf("%.6f %.6f\n",arc,chord);
+	}
+}
