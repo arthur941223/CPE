@@ -1,0 +1,59 @@
+#include<iostream>
+#include<iomanip>
+using namespace std;
+
+void bangla(long long n);
+
+int main(){
+    long long a;
+    int t=1;
+
+    while(cin>>a){
+
+        cout<<setw(4)<<t<<".";
+
+        if(a==0){
+            cout<<" 0";
+        }else{
+            bangla(a);
+        }
+
+        cout<<endl;
+        t++;
+    }
+
+    return 0;
+}
+
+void bangla(long long n){
+
+    // kuti
+    if(n>=10000000){
+        bangla(n/10000000);
+        cout<<" kuti";
+        n%=10000000;
+    }
+
+    // lakh
+    if(n>=100000){
+        cout<<" "<<n/100000<<" lakh";
+        n%=100000;
+    }
+
+    // hajar
+    if(n>=1000){
+        cout<<" "<<n/1000<<" hajar";
+        n%=1000;
+    }
+
+    // shata
+    if(n>=100){
+        cout<<" "<<n/100<<" shata";
+        n%=100;
+    }
+
+    // 剩下 1~99
+    if(n>0){
+        cout<<" "<<n;
+    }
+}
