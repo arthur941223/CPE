@@ -1,0 +1,17 @@
+#include<iostream>
+using namespace std;
+int main(){
+	int T;
+	cin>>T;
+	while(T--){
+		int a,b;
+		cin>>a>>b;
+		if(b>a||a+b%2==1){       //要判斷奇偶數 
+			cout<<"impossible"<<endl;
+		}else{
+			int sum1=(a+b)/2;
+			int sum2=(a-b)/2;    //好方法 
+			cout<<sum1<<" "<<sum2<<endl;
+		}
+	}
+}
