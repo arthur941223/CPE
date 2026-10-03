@@ -1,0 +1,30 @@
+#include<iostream>
+int Table[1000000];
+using namespace std;
+int reverse(int a){
+	int temp=0;
+	while(a){
+		temp=temp*10+a%10;
+		a/=10; 
+	}
+	return temp;
+}
+int main(){
+	int n;
+	for(int i=2;i<1000;i++){
+		for(int j=i+i;j<1000000;j+=i){
+			Table[j]=1;
+		}
+	}
+	while(cin>>n){
+		if(Table[n]==1){
+			cout<<n<<" is not prime."<<endl;
+		}else{
+			if(Table[reverse(n)]==0&&n!=reverse(n)){
+				cout<<n<<" is emirp."<<endl;
+			}else{
+				cout<<n<<" is prime."<<endl;
+			}
+		}
+	}
+} 
