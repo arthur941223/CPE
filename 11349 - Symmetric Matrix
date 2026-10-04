@@ -1,0 +1,37 @@
+#include<iostream>
+#include<vector>
+#include<string>
+using namespace std;
+int main(){
+	int T;
+	cin>>T;
+	int cnt=1;
+	while(T--){
+		int tf=1;
+		char ch;
+		int n;
+		cin>>ch>>ch>>n;
+		vector<vector<long long>> s(n, vector<long long>(n));
+		for(int i=0;i<n;i++){
+			for(int j=0;j<n;j++){
+				cin>>s[i][j];
+			}
+		}
+		for(int i=0;i<n;i++){
+			for(int j=0;j<n;j++){
+				if(s[i][j]<0){
+					tf=0;
+				}
+				if(s[i][j]!=s[n-i-1][n-j-1]){
+					tf=0;
+				}
+			}
+		}
+		if(tf==1){
+			cout<<"Test #"<<cnt<<": Symmetric."<<endl;
+		}else{
+			cout<<"Test #"<<cnt<<": Non-symmetric."<<endl;
+		}
+		cnt++;
+	}
+} 
