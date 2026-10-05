@@ -1,0 +1,45 @@
+#include<iostream>
+using namespace std;
+int main(){
+	int T;
+	cin>>T;
+	int X=1;
+	while(X<=T){
+		cout<<"Case "<<X<<":\n";
+		int Table[36];
+		for(int i=0;i<36;i++){
+			cin>>Table[i];
+		}
+		int t;
+		cin>>t;
+		while(t--){
+			int n;
+			int table[37]={0};
+			cin>>n;
+			cout<<"Cheapest base(s) for number "<<n<<":";
+			int min=0;
+			for(int i=2;i<=36;i++){
+				int temp=0;
+				int a=n;
+				while(a){
+					temp+=Table[a%i];
+					a/=i;
+				}
+				if(min==0||min>=temp){
+					table[i]=temp;
+					min=temp;
+				}
+			}
+			for(int i=2;i<=36;i++){
+				if(table[i]==min){
+					cout<<" "<<i;
+				}
+			}
+			cout<<endl;
+		}
+		if(X<T){
+			cout<<endl;
+		}
+		X++;
+	}
+} 
