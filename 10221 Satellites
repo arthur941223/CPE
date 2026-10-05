@@ -11,7 +11,7 @@ int main(){
 		if(s=="min"){
 			b=b/60;
 		}
-		if(b>180){
+		if(b>180){			//記得
 			b=360-b;
 		}
 		double r=6440+a;
