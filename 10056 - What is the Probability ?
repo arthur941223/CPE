@@ -1,0 +1,20 @@
+#include<iostream>
+#include<cmath>
+#include<iomanip>
+using namespace std;
+int main(){
+	int T;
+	cin>>T;
+	while(T--){
+		int n,a;
+		double p;
+		cin>>n>>p>>a;	
+		double q=1-p;								
+		if(p==0){						
+			cout<<"0.0000"<<endl;						// 0 
+		}else{
+			double sum=(pow(q,a-1)*p)/(1-pow(q,n));		//公式! 
+			cout<<fixed<<setprecision(4)<<sum<<endl;	//用法! 
+		}
+	}
+}
